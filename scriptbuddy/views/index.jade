@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1 Welcome to #{title}
+
+  textarea#result(cols='190' rows='5')
+
+  div(style='width: 100%;')
+    input.clear.btn.btn-regular(type='button' value='Clear' style='width: 200px; margin: 10px 0px 10px 0px; padding: 10px; font-size: 16px;')
+
+  each val, index in codes
+    div(style='width: 100%; float: left; display: block; height: 28px;')
+      p(style='width: 5%; float: left; line-height: 0px;')= val
+      input.checkboxes(type='checkbox' name='#{val}' value='#{val}' style='width: 5%; float: left; margin-top: 8px;')
+      p(style='width: 85%; float:left;line-height: 0px;')= countries[index]
+    p(style='width: 40%; float: left; margin: 1px 0px 4px 0px; border: 1px solid #2f508e; ')
+    
+    br
